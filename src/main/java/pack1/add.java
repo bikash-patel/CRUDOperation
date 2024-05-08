@@ -41,12 +41,12 @@ public class add extends HttpServlet {
          String lastname=(String)sc.getAttribute("lastname");
          String empid=(String)sc.getAttribute("empid");
          String email=(String)sc.getAttribute("email");
-         pr.println("<html><body bgcolor=yellow text=green><center><h1>");
+         pr.println("<html><body bgcolor=yellow text=green><center>");
          RequestDispatcher rd=request.getRequestDispatcher("/Index.html");
          if(empid.length()!=8)
          {
         	 pr.println("Employee Id must contain 8 digit number");
-        	 pr.println("</h1></center></body></html>");
+        	 pr.println("</center></body></html>");
         	 rd.include(request, response);
          }
          try
@@ -63,7 +63,7 @@ public class add extends HttpServlet {
          if(b)
          {
         	 pr.println("Employee Id already exist");
-        	 pr.println("</h1></center></body></html>");
+        	 pr.println("</center></body></html>");
         	 rd.include(request, response);
          }
          else
@@ -78,12 +78,14 @@ public class add extends HttpServlet {
      			if(c==0)
      			{
      				pr.println("Data not inserted");
+     				rd.include(request, response);
      			}
      			else
      			{
      				pr.println("Data inserted successfully");
+     				rd.include(request, response);
      			}
-     			pr.println("</h1></center></body></html>");
+     			pr.println("</center></body></html>");
      		} catch (SQLException e) {
      			e.printStackTrace();
      		}

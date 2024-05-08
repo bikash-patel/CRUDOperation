@@ -72,4 +72,14 @@
   <listener>
     <listener-class>pack1.DataBase</listener-class>
   </listener>
+  <servlet>
+    <description></description>
+    <display-name>NewAdd</display-name>
+    <servlet-name>NewAdd</servlet-name>
+    <servlet-class>pack1.NewAdd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewAdd</servlet-name>
+    <url-pattern>/newadd</url-pattern>
+  </servlet-mapping>
 </web-app>
