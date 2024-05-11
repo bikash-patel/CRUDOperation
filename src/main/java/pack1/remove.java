@@ -79,7 +79,7 @@ public class remove extends HttpServlet {
 		{
 			pr.println("Employee not exist");	
 		}
-		RequestDispatcher rd=request.getRequestDispatcher("/Index.html");
+		RequestDispatcher rd=request.getRequestDispatcher("/index.html");
 		rd.include(request,response);
 		pr.println("<html><body><center>");
 	}

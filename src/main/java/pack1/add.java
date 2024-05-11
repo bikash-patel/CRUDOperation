@@ -42,13 +42,15 @@ public class add extends HttpServlet {
          String empid=(String)sc.getAttribute("empid");
          String email=(String)sc.getAttribute("email");
          pr.println("<html><body bgcolor=yellow text=green><center>");
-         RequestDispatcher rd=request.getRequestDispatcher("/Index.html");
+         RequestDispatcher rd=request.getRequestDispatcher("/index.html");
          if(empid.length()!=8)
          {
         	 pr.println("Employee Id must contain 8 digit number");
         	 pr.println("</center></body></html>");
         	 rd.include(request, response);
          }
+         else
+         {
          try
          {
         	 PreparedStatement pst=con.prepareStatement("select * from employeedetails where empid=?");
@@ -65,7 +67,7 @@ public class add extends HttpServlet {
         	 pr.println("Employee Id already exist");
         	 pr.println("</center></body></html>");
         	 rd.include(request, response);
-         }
+        }
          else
          {
         	 try {
@@ -89,6 +91,7 @@ public class add extends HttpServlet {
      		} catch (SQLException e) {
      			e.printStackTrace();
      		}
+         }
          }
 	}
 

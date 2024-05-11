@@ -57,7 +57,7 @@ public class update extends HttpServlet {
 			else
 			{
 				pr.println("Wrong credntial!");
-				RequestDispatcher ds=request.getRequestDispatcher("/Index.html");
+				RequestDispatcher ds=request.getRequestDispatcher("/index.html");
 				ds.include(request, response);
 			}
 		}catch(SQLException e)

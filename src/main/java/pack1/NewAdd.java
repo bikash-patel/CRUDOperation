@@ -35,7 +35,7 @@ public class NewAdd extends HttpServlet {
 		PrintWriter pr=response.getWriter();
 		String save=request.getParameter("save");
 		String cancel=request.getParameter("cancel");
-		RequestDispatcher rd=request.getRequestDispatcher("/Index.html");
+		RequestDispatcher rd=request.getRequestDispatcher("/index.html");
 		if(save!=null)
 		{
 			String firstname=(String)sc.getAttribute("firstname");
